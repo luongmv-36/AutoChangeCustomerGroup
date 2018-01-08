@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
 <event name="checkout_onepage_controller_success_action">
-    <observer name="dtn_category_controller_success_action" instance="Dtn\Category\Observer\OrderSucess"/>
+    <observer name="dtn_auto_change_customer_group" instance="Dtn\AutoChangeCustomerGroup\Observer\OrderSucess"/>
 </event>
 </config>

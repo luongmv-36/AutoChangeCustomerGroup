@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Dtn_Category',
+    'Dtn_AutoChangeCustomerGroup',
     __DIR__
 );

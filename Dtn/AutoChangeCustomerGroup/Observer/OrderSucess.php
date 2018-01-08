@@ -1,13 +1,13 @@
 <?php
-namespace Dtn\Category\Observer;
+namespace Dtn\AutoChangeCustomerGroup\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Event\Observer;
 
 class OrderSucess implements ObserverInterface {
 
-    const XML_CATEGORY_GROUP_ENABLE = 'category_customer_group/config/enabled';
-    const XML_CUSTOMER_GROUP_FROM = 'category_customer_group/config/from_group';
-    const XML_CUSTOMER_GROUP_TO = 'category_customer_group/config/to_group';
+    const XML_AUTO_CHANGE_CUSTOMER_GROUP_ENABLE = 'dtn_autochangecustomergroup/config/enabled';
+    const XML_CUSTOMER_GROUP_FROM = 'dtn_autochangecustomergroup/config/from_group';
+    const XML_CUSTOMER_GROUP_TO = 'dtn_autochangecustomergroup/config/to_group';
     
     protected $logger;
     protected $_customer;
@@ -32,7 +32,7 @@ class OrderSucess implements ObserverInterface {
     public function execute(Observer $observer) {
 
         try {
-            if ($this->scopeConfig->getValue(self::XML_CATEGORY_GROUP_ENABLE)) {
+            if ($this->scopeConfig->getValue(self::XML_AUTO_CHANGE_CUSTOMER_GROUP_ENABLE)) {
                     $from = $this->scopeConfig->getValue(self::XML_CUSTOMER_GROUP_FROM);
                     $from_array = array_filter(explode(',', $from));
                     $to = $this->scopeConfig->getValue(self::XML_CUSTOMER_GROUP_TO);
